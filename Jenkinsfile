@@ -9,7 +9,7 @@ pipeline {
         }
         stage('build') {
             steps {
-                sh 'mvn_AD_9 package'
+                sh '/opt/maven/bin/mvn package'
             }
         }
     }   
