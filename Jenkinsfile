@@ -11,9 +11,9 @@ pipeline {
         }
         stage('terraform iac') {
             steps {
-                sh 'terraform init'
-                sh 'terraform validate'
-                sh 'terraform apply --auto-approve'
+                sh 'terraform -chdir=terraform init'
+                sh 'terraform -chdir=terraform validate'
+                sh 'terraform -chdir=terraform apply --auto-approve'
             }
         }
         stage('DP with k8s') {
