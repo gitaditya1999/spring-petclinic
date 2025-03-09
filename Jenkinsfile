@@ -11,10 +11,9 @@ pipeline {
         }
         stage('terraform iac') {
             steps {
-                sh 'cd terraform'
-                sh 'terraform  init'
-                sh 'terraform  validate'
-                sh 'terraform apply --auto-approve'
+                sh 'terraform -chdir=C:/Users/lenovo/Downloads/finalcicd/spring-petclinic/terraform init'
+                sh 'terraform -chdir=C:/Users/lenovo/Downloads/finalcicd/spring-petclinic/terraform validate'
+                sh 'terraform -chdir=C:/Users/lenovo/Downloads/finalcicd/spring-petclinic/terraform apply --auto-approve'
             }
         }
         stage('DP with k8s') {
